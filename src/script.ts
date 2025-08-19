@@ -1,7 +1,4 @@
-// Inspired By
-// https://codepen.io/abeatrize/pen/LJqYey
-
-// Bongo Cat originally created by @StrayRogue and @DitzyFlama
+import gsap from "gsap";
 
 const ID = "bongo-cat";
 const s = (selector: string) => `#${ID} ${selector}`;
@@ -104,7 +101,7 @@ const animateNotes = (els: HTMLElement[]): GSAPTween => {
       rotation: dir(gsap.utils.random(20, 30, 1)),
       x: dir(gsap.utils.random(40, 60, 1)),
       y: gsap.utils.random(-200, -220, 1),
-      onComplete: () => animateNotes(els),
+      onComplete: () => { animateNotes(els); },
     }
   );
 };
